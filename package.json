@@ -1,19 +1,31 @@
 {
   "name": "ui-jsmx",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.8",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.19",
+    "react": "^18.3.1",
+    "tailwindcss": "^3.4.4",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "class-variance-authority": "^0.7.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
     "react-scripts": "5.0.1",
+    "tailwind-merge": "^2.4.0",
+    "tailwind-variants": "^0.2.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "delbuild": "rmdir dist /s && tsup && yalc publish",
+    "build": "tsup && yalc publish",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
