@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+## Como testar localmente
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Primeiro é necessário baixar o yalc, basicamente ele é uma forma de simular o comando "npm publish" localmente.
+```
+npm i yalc -g
+```
 
-## Available Scripts
+Com isso você pode usar os scripts locais que os mesmos já vão fazer o resto automáticamente, mas para informação temos o:
+```
+yalc publish
+```
+Que serve para colocar a lib no global do yalc e você então pode usar em qualquer outro projeto.
 
-In the project directory, you can run:
+Após esses itens você pode apenas ir no projeto que deseja usar a lib e rodar:
+```
+yalc add {nome-da-lib}
+```
+Que no nosso caso é **`ui-jsmx`**
 
-### `yarn start`
+## Para atualizar a lib
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A primeira vez que for gerar a pasta "**dist**" é preciso rodar o comando:
+```
+yarn build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ele vai gerar o **dist** e fazer o publish.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Caso já tenha um **dist** na pasta então é recomendado usar o 
+```
+yarn delbuild
+```
+Que faz a mesma coisa que o acima, porém antes de tudo ele vai pedir para deletar a pasta **dist** antes de gerar uma nova, assim garantindo que tudo está atualizado.
